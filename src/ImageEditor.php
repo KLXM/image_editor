@@ -429,11 +429,16 @@ final class ImageEditor
         }
         $ratio = null !== $ratio && in_array($ratio, self::RATIOS, true) ? $ratio : null;
         [$w, $h] = self::size($file, $ratio);
+        // Fokuspunkt/Einpassen ohne style-Attribut (Content-Security-Policy): Klasse plus <style nonce> direkt davor
+        $css = '';
         if (null === $ratio && '' !== ($style = self::imgStyle($file))) {
-            $attrs['style'] = $style;
+            $class = 'ie-' . substr(md5($style), 0, 10);
+            $attrs['class'] = trim((string) ($attrs['class'] ?? '') . ' ' . $class);
+            $css = '<style nonce="' . \Redaxo\Core\View\escape(\Redaxo\Core\Http\Response::getNonce()) . '">.' . $class . '{'
+                . str_replace(';', ' !important;', $style) . ' !important}</style>';
         }
 
-        return '<img src="' . \Redaxo\Core\View\escape(self::url($file, 1280, $ratio)) . '" srcset="' . \Redaxo\Core\View\escape(self::srcset($file, $ratio)) . '" sizes="' . \Redaxo\Core\View\escape($sizes) . '"'
+        return $css . '<img src="' . \Redaxo\Core\View\escape(self::url($file, 1280, $ratio)) . '" srcset="' . \Redaxo\Core\View\escape(self::srcset($file, $ratio)) . '" sizes="' . \Redaxo\Core\View\escape($sizes) . '"'
             . ($w && $h ? ' width="' . $w . '" height="' . $h . '"' : '') . self::attrs($attrs) . '>';
     }
 
