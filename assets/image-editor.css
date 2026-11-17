@@ -1,5 +1,5 @@
 /*
- * friendsofredaxo/image_editor – Bildeditor aus KLXM Studio (MIT). Regeln aus Studio _imageedit.css und admin.css (Knöpfe,
+ * klxm/image_editor – Bildeditor aus KLXM Studio (MIT). Regeln aus Studio _imageedit.css und admin.css (Knöpfe,
  * Dialog); Variablen --adm-* hier gesetzt, damit der Dialog im REDAXO-Backend und auf der Website gleich aussieht.
  */
 :root, :host {

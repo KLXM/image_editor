@@ -1,6 +1,6 @@
 <?php
 
-namespace FriendsOfRedaxo\ImageEditor;
+namespace Klxm\ImageEditor;
 
 use GdImage;
 use Redaxo\Core\Database\Sql;

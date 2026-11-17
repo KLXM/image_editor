@@ -1,9 +1,9 @@
 # image_editor
 
-> ### Du nutzt REDAXO 5? → [Zweig `5.x`](https://github.com/FriendsOfREDAXO/image_editor/tree/5.x)
+> ### Du nutzt REDAXO 5? → [Zweig `5.x`](https://github.com/KLXM/image_editor/tree/5.x)
 >
 > REDAXO 6 ist noch nicht erschienen. Für aktuelle REDAXO-5-Installationen ist der Zweig **`5.x`** die richtige Wahl
-> ([ZIP herunterladen](https://github.com/FriendsOfREDAXO/image_editor/archive/refs/heads/5.x.zip)):
+> ([ZIP herunterladen](https://github.com/KLXM/image_editor/archive/refs/heads/5.x.zip)):
 > Zuschnitte je Bildformat samt Ausgabe, ideal zusammen mit **MediaPlace** (Bearbeitung), **focuspoint** (Fokuspunkt)
 > und **media_negotiator** (AVIF/WebP).
 >
@@ -20,13 +20,13 @@ Das Original im Medienpool bleibt unverändert – gespeichert werden nur die Sc
 ## Voraussetzungen und Installation
 
 - REDAXO 6 (`redaxo/core` 6.x), PHP 8.5 mit GD; Imagick ist optional (Entzerren großer Bilder schneller und genauer).
-- Am einfachsten zusammen mit [fluid](https://github.com/FriendsOfREDAXO/fluid): dessen `install-dev.sh` richtet
+- Am einfachsten zusammen mit [fluid](https://github.com/KLXM/fluid): dessen `install-dev.sh` richtet
   REDAXO 6, fluid und image_editor mit einem Befehl ein.
 - In ein bestehendes REDAXO-6-Projekt (solange das AddOn noch nicht auf Packagist steht, direkt von GitHub):
 
 ```bash
-composer config repositories.image_editor '{"type": "vcs", "url": "https://github.com/FriendsOfREDAXO/image_editor", "no-api": true}'
-composer require friendsofredaxo/image_editor:*@dev
+composer config repositories.image_editor '{"type": "vcs", "url": "https://github.com/KLXM/image_editor", "no-api": true}'
+composer require klxm/image_editor:*@dev
 php bin/console migrate
 ```
 
@@ -54,7 +54,7 @@ Nach Updates (`composer update`) wieder `php bin/console migrate` – das kopier
 ## In Templates und Modulen
 
 ```php
-use FriendsOfRedaxo\ImageEditor\ImageEditor;
+use Klxm\ImageEditor\ImageEditor;
 
 // Bild im Format 16:9 – eigener Ausschnitt, sonst um den Fokuspunkt; srcset, width/height, Alt-Text aus dem Medienpool
 echo ImageEditor::img('bild.jpg', '(min-width: 1200px) 600px, 100vw', '16:9');

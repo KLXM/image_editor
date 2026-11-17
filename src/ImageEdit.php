@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace FriendsOfRedaxo\ImageEditor;
+namespace Klxm\ImageEditor;
 
 /**
  * Rechnung und Bildoperationen aus KLXM Studio (Core\ImageEdit, MIT) – für REDAXO angepasst (ohne app()/Media).

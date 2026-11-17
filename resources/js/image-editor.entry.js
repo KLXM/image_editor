@@ -1,5 +1,5 @@
 /*
- * friendsofredaxo/image_editor – Bildeditor aus KLXM Studio (_imageedit.js, MIT) für REDAXO: window.ImageEditor.
+ * klxm/image_editor – Bildeditor aus KLXM Studio (_imageedit.js, MIT) für REDAXO: window.ImageEditor.
  *
  *   ImageEditor.open({ file, api, tool })   Dialog öffnen → Promise: gespeicherte Angaben (item) oder undefined
  *   ImageEditor.adjust({ file, api, tab })  Dialog „Bild anpassen“ (tab: adjust | focus)

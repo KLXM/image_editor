@@ -1,6 +1,7 @@
 {
-    "name": "friendsofredaxo/image_editor",
+    "name": "klxm/image_editor",
     "description": "Bilder zerstörungsfrei bearbeiten für REDAXO 6: Zuschneiden, Drehen, Spiegeln, Ausrichten, Entzerren – im Medienpool und für andere Addons",
+    "homepage": "https://github.com/KLXM/image_editor",
     "type": "redaxo-addon",
     "license": "MIT",
     "keywords": [
@@ -11,20 +12,20 @@
         "media-pool",
         "crop"
     ],
-    "homepage": "https://github.com/FriendsOfREDAXO/image_editor",
     "authors": [
         {
             "name": "Thomas Skerbis",
-            "homepage": "https://klxm.de"
+            "homepage": "https://github.com/skerbis",
+            "role": "Lead"
         },
         {
-            "name": "Friends Of REDAXO",
-            "homepage": "https://friendsofredaxo.github.io"
+            "name": "KLXM Crossmedia GmbH",
+            "homepage": "https://klxm.de"
         }
     ],
     "support": {
-        "issues": "https://github.com/FriendsOfREDAXO/image_editor/issues",
-        "source": "https://github.com/FriendsOfREDAXO/image_editor"
+        "issues": "https://github.com/KLXM/image_editor/issues",
+        "source": "https://github.com/KLXM/image_editor"
     },
     "require": {
         "php": "^8.5",
@@ -36,12 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "FriendsOfRedaxo\\ImageEditor\\": "src/"
+            "Klxm\\ImageEditor\\": "src/"
         }
     },
     "extra": {
         "redaxo": {
-            "addon-class": "FriendsOfRedaxo\\ImageEditor\\ImageEditorAddon"
+            "addon-class": "Klxm\\ImageEditor\\ImageEditorAddon"
         },
         "branch-alias": {
             "dev-main": "1.x-dev"

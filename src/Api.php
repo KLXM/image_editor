@@ -1,6 +1,6 @@
 <?php
 
-namespace FriendsOfRedaxo\ImageEditor;
+namespace Klxm\ImageEditor;
 
 use Override;
 use Redaxo\Core\ApiFunction\ApiFunction;

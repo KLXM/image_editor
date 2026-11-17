@@ -1,9 +1,9 @@
 <?php
 
-namespace FriendsOfRedaxo\ImageEditor\MediaType;
+namespace Klxm\ImageEditor\MediaType;
 
-use FriendsOfRedaxo\ImageEditor\Adjust;
-use FriendsOfRedaxo\ImageEditor\ImageEditor;
+use Klxm\ImageEditor\Adjust;
+use Klxm\ImageEditor\ImageEditor;
 use Intervention\Image\Format;
 use Override;
 use Redaxo\Core\MediaManager\AsMediaType;
