@@ -22,11 +22,10 @@ Das Original im Medienpool bleibt unverändert – gespeichert werden nur die Sc
 - REDAXO 6 (`redaxo/core` 6.x), PHP 8.5 mit GD; Imagick ist optional (Entzerren großer Bilder schneller und genauer).
 - Am einfachsten zusammen mit [fluid](https://github.com/KLXM/fluid): dessen `install-dev.sh` richtet
   REDAXO 6, fluid und image_editor mit einem Befehl ein.
-- In ein bestehendes REDAXO-6-Projekt (solange das AddOn noch nicht auf Packagist steht, direkt von GitHub):
+- In ein bestehendes REDAXO-6-Projekt:
 
 ```bash
-composer config repositories.image_editor '{"type": "vcs", "url": "https://github.com/KLXM/image_editor", "no-api": true}'
-composer require klxm/image_editor:*@dev
+composer require klxm/image_editor:^1.0@beta
 php bin/console migrate
 ```
 
