@@ -30,7 +30,8 @@
     "require": {
         "php": "^8.5",
         "ext-gd": "*",
-        "redaxo/core": "^6.0@dev"
+        "redaxo/core": "^6.0@dev",
+        "klxm/klxm_meta": "^1.0@dev"
     },
     "suggest": {
         "ext-imagick": "Entzerren großer Bilder schneller und genauer"

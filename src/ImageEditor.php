@@ -3,6 +3,7 @@
 namespace Klxm\ImageEditor;
 
 use GdImage;
+use Klxm\Meta\Alt;
 use Redaxo\Core\Database\Sql;
 use Redaxo\Core\Filesystem\File;
 use Redaxo\Core\Filesystem\Path;
@@ -412,7 +413,7 @@ final class ImageEditor
      *     echo ImageEditor::img($file, '(min-width: 1200px) 600px, 100vw', '16:9');
      *     echo ImageEditor::img($file, '100vw', '21:9', ['class' => 'hero', 'priority' => true]);
      *
-     * $attrs: weitere Attribute; 'alt' überschreibt den Alt-Text des Medienpools (meta_alt, je Sprache), 'priority' => true
+     * $attrs: weitere Attribute; 'alt' überschreibt den Alt-Text des Medienpools (klxm_meta: je Sprache, dekorativ = leer), 'priority' => true
      * für das wichtigste Bild der Seite (loading="eager" fetchpriority="high" statt lazy).
      *
      * @param array<string, string|bool> $attrs
@@ -480,10 +481,8 @@ final class ImageEditor
         $priority = !empty($attrs['priority']);
         unset($attrs['priority']);
         if (!array_key_exists('alt', $attrs)) {
-            $attrs['alt'] = trim((string) $media->getValue('meta_alt'));
-            if ('' === $attrs['alt']) {
-                $attrs['role'] = 'presentation';
-            }
+            // Regel von klxm_meta: Alternativtext je Sprache, dekorativ = alt="", sonst Titel
+            $attrs['alt'] = Alt::attribute($media);
         }
         $attrs += $priority ? ['loading' => 'eager', 'fetchpriority' => 'high'] : ['loading' => 'lazy'];
         $attrs += ['decoding' => 'async'];
